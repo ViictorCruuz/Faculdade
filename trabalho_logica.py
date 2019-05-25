@@ -98,18 +98,14 @@ def RedesComputadores():
     escolha = int(input('Sua resposta: '))
 
     try:
-        if escolha == 1:
-            print(mensagem_erro())
-        elif escolha == 2:
-            print(mensagem_erro())
-        elif escolha == 3:
-            print(mensagem_erro())
-        elif escolha == 4:
+        if escolha == 4:
             acertos += 1
             Jredes['Pontos: '] += 10
             print(mensagem_acerto())
-        else:
+        elif escolha not in range(1, 5):
             print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
+        else:
+            print(mensagem_erro())
     except ValueError:
         print('Isso não é um número!!!')
 
@@ -126,14 +122,10 @@ def RedesComputadores():
             acertos += 1
             Jredes['Pontos: '] += 10
             print(mensagem_acerto())
-        elif escolha == 2:
-            print(mensagem_erro())
-        elif escolha == 3:
-            print(mensagem_erro())
-        elif escolha == 4:
-            print(mensagem_erro())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
         else:
-            print('Número de resposta não existe, portanto será contado como erro!!!')
+            print(mensagem_erro())
     except ValueError:
         print('Isso não é um número!!!')
 
@@ -148,18 +140,14 @@ def RedesComputadores():
     try:
         escolha = int(input('Sua resposta: '))
 
-        if escolha == 1:
-            print(mensagem_erro())
-        elif escolha == 2:
+        if escolha == 2:
             acertos += 1
             Jredes['Pontos: '] += 10
             print(mensagem_acerto())
-        elif escolha == 3:
-            print(mensagem_erro())
-        elif escolha == 4:
-            print(mensagem_erro())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
         else:
-            print('Número de resposta não existe, portanto será contado como erro!!!')
+            print(mensagem_erro())
     except ValueError:
         print('Isso não é um número!!!')
     print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
@@ -174,16 +162,14 @@ def RedesComputadores():
     try:
         escolha = int(input('Sua resposta: '))
 
-        if escolha == 1:
-            print(mensagem_erro())
-        elif escolha == 2:
-            print(mensagem_erro())
-        elif escolha == 3:
+        if escolha == 3:
             acertos += 1
             Jredes['Pontos: '] += 10
             print(mensagem_acerto())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
         else:
-            print('Número de resposta não existe, portanto será contado como erro!!!')
+            print(mensagem_erro())
     except ValueError:
         print('Isso não é um número!!!')
 
