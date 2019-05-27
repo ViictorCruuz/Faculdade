@@ -88,7 +88,7 @@ def RedesComputadores():
     Jredes['Nome: '] = str(input('{}Digite seu nome para registro:{} \n'.format(cores['Amarelo'], cores['Limpar'])))
     Jredes['Pontos: '] = 0
     print('\033[1;7;32mBem vindo ao jogo {}!!.Boa sorte!!\033[m\n'.format(Jredes['Nome: ']))
-    acertos = int(0)
+    acertos = 0
 
     print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= PERGUNTAS =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
     print()
@@ -98,18 +98,14 @@ def RedesComputadores():
     escolha = int(input('Sua resposta: '))
 
     try:
-        if escolha == 1:
-            print(mensagem_erro())
-        elif escolha == 2:
-            print(mensagem_erro())
-        elif escolha == 3:
-            print(mensagem_erro())
-        elif escolha == 4:
+        if escolha == 4:
             acertos += 1
-            Jredes['Pontos: '] += 10
+            Jredes['Pontos: '] += 20
             print(mensagem_acerto())
-        else:
+        elif escolha not in range(1, 5):
             print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
+        else:
+            print(mensagem_erro())
     except ValueError:
         print('Isso não é um número!!!')
 
@@ -124,16 +120,12 @@ def RedesComputadores():
         escolha = int(input('Sua resposta: '))
         if escolha == 1:
             acertos += 1
-            Jredes['Pontos: '] += 10
+            Jredes['Pontos: '] += 20
             print(mensagem_acerto())
-        elif escolha == 2:
-            print(mensagem_erro())
-        elif escolha == 3:
-            print(mensagem_erro())
-        elif escolha == 4:
-            print(mensagem_erro())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
         else:
-            print('Número de resposta não existe, portanto será contado como erro!!!')
+            print(mensagem_erro())
     except ValueError:
         print('Isso não é um número!!!')
 
@@ -148,18 +140,14 @@ def RedesComputadores():
     try:
         escolha = int(input('Sua resposta: '))
 
-        if escolha == 1:
-            print(mensagem_erro())
-        elif escolha == 2:
+        if escolha == 2:
             acertos += 1
-            Jredes['Pontos: '] += 10
+            Jredes['Pontos: '] += 20
             print(mensagem_acerto())
-        elif escolha == 3:
-            print(mensagem_erro())
-        elif escolha == 4:
-            print(mensagem_erro())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
         else:
-            print('Número de resposta não existe, portanto será contado como erro!!!')
+            print(mensagem_erro())
     except ValueError:
         print('Isso não é um número!!!')
     print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
@@ -174,26 +162,47 @@ def RedesComputadores():
     try:
         escolha = int(input('Sua resposta: '))
 
-        if escolha == 1:
-            print(mensagem_erro())
-        elif escolha == 2:
-            print(mensagem_erro())
-        elif escolha == 3:
+        if escolha == 3:
             acertos += 1
-            Jredes['Pontos: '] += 10
+            Jredes['Pontos: '] += 20
             print(mensagem_acerto())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
         else:
-            print('Número de resposta não existe, portanto será contado como erro!!!')
+            print(mensagem_erro())
+    except ValueError:
+        print('Isso não é um número!!!')
+
+    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+    print()
+    print('E) Como é denominado o protocolo responsável por fazer o gerencimento de máquinas que estejam funcionan em '
+          '1rede com o padrão TCP/IP?\n'
+          '\n1 - SMTP\n'
+          '2 - POP\n'
+          '3 - FTP\n'
+          '4 - SNMP\n')
+
+    try:
+        escolha = int(input('Sua resposta: '))
+
+        if escolha == 4:
+            acertos += 1
+            Jredes['Pontos: '] += 20
+            print(mensagem_acerto())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
+        else:
+            print(mensagem_erro())
     except ValueError:
         print('Isso não é um número!!!')
 
     if Jredes['Pontos: '] >= 1:
-        print('Parabéns {}!!! Você acertou {}/10 pergunta(s) e marcou {} ponto(s)!{}'.format(Jredes['Nome: '], acertos,
-                                                                                             Jredes['Pontos: '],
-                                                                                             cores['Limpar']))
+        print('Parabéns {}!!! Você acertou {}/5 pergunta(s) e marcou {} pontos!{}'.format(Jredes['Nome: '], acertos,
+                                                                                            Jredes['Pontos: '],
+                                                                                            cores['Limpar']))
     else:
-        print('Ooooh não!!! Você acertou {}/10 perguntas e não marcou nenhum ponto'.format(acertos,
-                                                                                           Jredes['Pontos: ']))
+        print('Ooooh não!!! Você acertou {}/5 perguntas e não marcou nenhum ponto'.format(acertos,
+                                                                                          Jredes['Pontos: ']))
     print()
     Redes.append(Jredes.copy())
     return RankingRedes()
@@ -203,34 +212,87 @@ def LogicaProgramacao():
     Jlogica['Nome: '] = str(input('{}Digite seu nome para registro:{} \n'.format(cores['Amarelo'], cores['Limpar'])))
     Jlogica['Pontos: '] = 0
     print('\033[1;7;32mBem vindo ao jogo {}!!.Boa sorte!!\033[m\n'.format(Jlogica['Nome: ']))
-    acertos = int(0)
+    acertos = 0
 
     print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= PERGUNTAS =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
     print()
-    print('1) Qual Camada no Modelo OSI tem o papel de localizar outros computadores?\n'
-          '1 - Sessão\n''2 - Transporte\n''3 - Aplicação\n''4 - Rede\n')
-    escolha = int(input('Sua resposta: '))
-    if escolha == 4:
-        acertos += 1
-        Jlogica['Pontos: '] += 10
-        print('\033[32mVocê acertou :)\033[m')
-    else:
-        print('\033[31mVocê errou :(\033[m')
+    print('A) Um algoritmo pode ou não ter solução computacional. Baseado nisso, assinale a alternativa que indique '
+          'um problema que têm solução computacional, ou seja, a partir do algoritmo é possível construir um programa '
+          'de computador\n'
+          '\n1 - Problema de cubo mágico\n'
+          '2 - Trocar um pneu furado\n'
+          '3 - Converter um valor em dólares ($) para reais (R$)\n'
+          '4 - Amarrar os cadarços\n')
+
+    try:
+        escolha = int(input('Sua resposta: '))
+
+        if escolha == 3:
+            acertos += 1
+            Jlogica['Pontos: '] += 20
+            print(mensagem_acerto())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
+        else:
+            print(mensagem_erro())
+    except ValueError:
+        print('Isso não é um número!!!')
+
     print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
     print()
-    print('1) Qual Camada no Modelo OSI tem o papel de localizar outros computadores?\n'
-          '1 - Sessão\n''2 - Transporte\n''3 - Aplicação\n''4 - Rede\n')
-    escolha = int(input('Sua resposta: '))
-    if escolha == 4:
-        acertos += 1
-        Jlogica['Pontos: '] += 10
-        print('\033[32mVocê acertou :)\033[m')
-    else:
-        print('\033[31mVocê errou :(\033[m')
+    print('B) A linguagem Python criada no início da década de 90 surgiu com o objetivo de aumentar a produtividade '
+          'do programador, com as seguintes características:\n'
+          '\n1 - Linguagem de baixo e alto nível com licença proprietária e semelhante à linguagem C e Pascal\n'
+          '2 -  Linguagem de alto nível com licença pública, linguagem interpretada e interativa com criação de '
+          'scripts que permite portabilidade e automatização de tarefas\n'
+          '3 - Linguagem de baixo nível com compilador interativo que permite a criação de executáveis\n'
+          '4 - Linguagem de alto nível com licença proprietária totalmente orientada a eventos.\n')
+
+    try:
+        escolha = int(input('Sua escolha: '))
+
+        if escolha == 2:
+            acertos += 1
+            Jlogica['Pontos: '] += 20
+            print(mensagem_acerto())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
+        else:
+            print(mensagem_erro())
+    except ValueError:
+        print('Isso não é um número!!!')
+
     print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
     print()
-    print('Parabéns {} Você acertou {}/10 perguntas e marcou {} pontos!{}'.format(Jlogica['Nome: '], acertos,
-                                                                                  Jlogica['Pontos: '], cores['Limpar']))
+    print('C) Tanto o interpretador como o compilador transformam o código escrito em linguagem humana para linguagem '
+          'de máquina, só que o compilador faz isto em tempo de compilação enquanto o interpretador faz isto em tempo '
+          'de execução.\n'
+          '\n1 - Verdadeiro\n'
+          '2 - Falso\n')
+
+    try:
+        escolha = int(input('Sua resposta: '))
+
+        if escolha == 1:
+            acertos += 1
+            Jlogica['Pontos: '] += 20
+            print(mensagem_acerto())
+        elif escolha == 2:
+            print(mensagem_erro())
+        else:
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
+    except ValueError:
+        print('Isso não é um número!!!')
+
+
+    if Jlogica['Pontos: '] >= 1:
+        print('Parabéns {}!!! Você acertou {}/5 pergunta(s) e marcou {} pontos!{}'.format(Jlogica['Nome: '], acertos,
+                                                                                          Jlogica['Pontos: '],
+                                                                                          cores['Limpar']))
+    else:
+        print('Ooooh não!!! Você acertou {}/5 perguntas e não marcou nenhum ponto'.format(acertos,
+                                                                                          Jlogica['Pontos: ']))
+
     print()
     Logica.append(Jlogica.copy())
     return RankingLogica()
@@ -240,35 +302,44 @@ def ModelagemDados():
     Jmodelagem['Nome: '] = str(input('{}Digite seu nome para registro:{} \n'.format(cores['Amarelo'], cores['Limpar'])))
     Jmodelagem['Pontos: '] = 0
     print('\033[1;7;32mBem vindo ao jogo {}!!.Boa sorte!!\033[m\n'.format(Jmodelagem['Nome: ']))
-    acertos = int(0)
+    acertos = 0
 
     print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= PERGUNTAS =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
     print()
-    print('1) Qual Camada no Modelo OSI tem o papel de localizar outros computadores?\n'
-          '1 - Sessão\n''2 - Transporte\n''3 - Aplicação\n''4 - Rede\n')
-    escolha = int(input('Sua resposta: '))
-    if escolha == 4:
-        acertos += 1
-        Jmodelagem['Pontos: '] += 10
-        print('\033[32mVocê acertou :)\033[m')
+    print('A) Em Modelagem de Dados, um tipo de atributo, que não pertence propriamente ao objeto (entidade ou '
+          'relacionamento) onde está alocado, mas fez algum tipo de citação ou ligação desse objeto com outro, '
+          'recebe um nome. Assinale a alternativa referente a esse atributo.\n'
+          '\n1 - Atributo chave\n'
+          '2 - Atributo descritivo derivado\n'
+          '3 - Atributo referencial\n'
+          '4 - Atributo descritivo composto')
+
+    try:
+        escolha = int(input('Sua resposta: '))
+
+        if escolha == 3:
+            acertos += 1
+            Jmodelagem['Pontos: '] += 20
+            print(mensagem_acerto())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
+        else:
+            print(mensagem_erro())
+    except ValueError:
+        print('Isso não é um número!!!')
+
+
+
+
+
+    if Jmodelagem['Pontos: '] >= 1:
+        print('Parabéns {}!!! Você acertou {}/5 pergunta(s) e marcou {} pontos!{}'.format(Jmodelagem['Nome: '], acertos,
+                                                                                          Jmodelagem['Pontos: '],
+                                                                                          cores['Limpar']))
     else:
-        print('\033[31mVocê errou :(\033[m')
-    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-    print()
-    print('1) Qual Camada no Modelo OSI tem o papel de localizar outros computadores?\n'
-          '1 - Sessão\n''2 - Transporte\n''3 - Aplicação\n''4 - Rede\n')
-    escolha = int(input('Sua resposta: '))
-    if escolha == 4:
-        acertos += 1
-        Jmodelagem['Pontos: '] += 10
-        print('\033[32mVocê acertou :)\033[m')
-    else:
-        print('\033[31mVocê errou :(\033[m')
-    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-    print()
-    print('Parabéns {} Você acertou {}/10 perguntas e marcou {} pontos!{}'.format(Jmodelagem['Nome: '], acertos,
-                                                                                  Jmodelagem['Pontos: '],
-                                                                                  cores['Limpar']))
+        print('Ooooh não!!! Você acertou {}/5 perguntas e não marcou nenhum ponto'.format(acertos,
+                                                                                          Jmodelagem['Pontos: ']))
+
     print()
     Modelagem.append(Jmodelagem.copy())
     return RankingModelagem()
