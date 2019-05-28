@@ -198,8 +198,8 @@ def RedesComputadores():
 
     if Jredes['Pontos: '] >= 1:
         print('Parabéns {}!!! Você acertou {}/5 pergunta(s) e marcou {} pontos!{}'.format(Jredes['Nome: '], acertos,
-                                                                                            Jredes['Pontos: '],
-                                                                                            cores['Limpar']))
+                                                                                          Jredes['Pontos: '],
+                                                                                          cores['Limpar']))
     else:
         print('Ooooh não!!! Você acertou {}/5 perguntas e não marcou nenhum ponto'.format(acertos,
                                                                                           Jredes['Pontos: ']))
@@ -265,7 +265,7 @@ def LogicaProgramacao():
     print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
     print()
     print('C) Tanto o interpretador como o compilador transformam o código escrito em linguagem humana para linguagem '
-          'de máquina, só que o compilador faz isto em tempo de compilação enquanto o interpretador faz isto em tempo '
+          'de máquina, porém o compilador faz isto em tempo de compilação enquanto o interpretador faz isto em tempo '
           'de execução.\n'
           '\n1 - Verdadeiro\n'
           '2 - Falso\n')
@@ -284,6 +284,55 @@ def LogicaProgramacao():
     except ValueError:
         print('Isso não é um número!!!')
 
+    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+    print()
+    print('D) De acordo com a sequência numérica abaixo, diga qual seria o próximo número da lista:\n')
+
+    lista = [1, 3, 7, 15, 31, 63, 127]
+    for n in lista:
+        print(n)
+        if n == 63:
+            break
+    print()
+
+    print('1 - 64\n'
+          '2 - 79\n'
+          '3 - 154\n'
+          '4 - 127\n')
+
+    try:
+        escolha = int(input('Sua resposta: '))
+
+        if escolha == 4:
+            acertos += 1
+            Jlogica['Pontos: '] += 20
+            print(mensagem_acerto())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
+        else:
+            print(mensagem_erro())
+    except ValueError:
+        print('Isso não é um número!!!')
+
+    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+    print()
+    print('E) A afirmação: o bloco do comando if também é conhecido como um desvio, é:\n'
+          '\n1 - Verdadeiro\n'
+          '2 - Falso\n')
+
+    try:
+        escolha = int(input('Sua resposta: '))
+
+        if escolha == 1:
+            acertos += 1
+            Jlogica['Pontos: '] += 20
+            print(mensagem_acerto())
+        elif escolha == 2:
+            print(mensagem_erro())
+        else:
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
+    except ValueError:
+        print('Isso não é um número!!!')
 
     if Jlogica['Pontos: '] >= 1:
         print('Parabéns {}!!! Você acertou {}/5 pergunta(s) e marcou {} pontos!{}'.format(Jlogica['Nome: '], acertos,
@@ -328,9 +377,105 @@ def ModelagemDados():
     except ValueError:
         print('Isso não é um número!!!')
 
+    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+    print()
+    print('B) No Modelo Entidade Relacionamento, o modelo de dados pode ser classificado nos seguintes níveis de '
+          'abstração:\n'
+          '\n1 - Conceitual, normativo e físico\n'
+          '2- Lógico, normativo e associativo\n'
+          '3 - Conceitural, lógico e físico\n'
+          '4 - Físico, descritivo e relacionamento\n')
 
+    try:
+        escolha = int(input('Sua resposta: '))
 
+        if escolha == 3:
+            acertos += 1
+            Jmodelagem['Pontos: '] += 20
+            print(mensagem_acerto())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
+        else:
+            print(mensagem_erro())
+    except ValueError:
+        print('Isso não é um número!!!')
 
+    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+    print()
+    print(
+        'C) Um Analista de Sistemas, ao fazer a modelagem de um banco de dados, constatou a necessidade de representar'
+        'um relacionamento com origem e destino em um mesmo conjunto de entidades. Esse tipo de relacionamento '
+        'denomina-se\n'
+        '\n1 - Indireto\n'
+        '2 - Recursivo\n'
+        '3 - Interno\n'
+        '4 - Adaptivo\n')
+
+    try:
+        escolha = int(input('Sua resposta: '))
+
+        if escolha == 2:
+            acertos += 1
+            Jmodelagem['Pontos: '] += 20
+            print(mensagem_acerto())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
+        else:
+            print(mensagem_erro())
+    except ValueError:
+        print('Isso não é um número!!!')
+
+    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+    print()
+    print('D) Quando se modela um banco de dados, para evitar a redundância dos dados nas tabelas devem-se eliminar as '
+          'tabelas aninhadas, a dependência funcional parcial de atributos e a dependência funcional transitiva de '
+          'atributos. Para conseguir isso utiliza-se um processo conhecido como\n'
+          '\n1 - Encapsulamento\n'
+          '2 - Agregação\n'
+          '3 - Especialização\n'
+          '4 - Normalização\n')
+
+    try:
+        escolha = int(input('Sua resposta: '))
+
+        if escolha == 4:
+            acertos += 1
+            Jmodelagem['Pontos: '] += 20
+            print(mensagem_acerto())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
+        else:
+            print(mensagem_erro())
+    except ValueError:
+        print('Isso não é um número!!!')
+
+    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+    print()
+    print(
+        'E) Na Modelagem de Banco de Dados com o MER, Modelo Entidade Relacionamento, os atributos são características'
+        ' que definem as entidades, e uma entidade é um objeto de interesse do usuário final. Os atributos podem ser '
+        'classificados em simples e compostos, monovalorados, multivalorados e derivados. O atributo derivado pode ser'
+        ' armazenado ou não armazenado e, em ambos os casos, apresentam vantagens e desvantagens. Assinale a '
+        'alternativa que apresenta uma desvantagem do atributo derivado armazenado.\n'
+        '\n1 - Exige manutenção constante para garantir que o valor seja atual, especialmente se qualquer valor '
+        'utilizado na computação se alterar\n'
+        '2 - Utiliza ciclos de processamento da CPU\n'
+        '3 - Aumenta o tempo de acesso aos dados\n'
+        '4 - Adiciona complexidade de codificação das consultas\n')
+
+    try:
+        escolha = int(input('Sua resposta: '))
+
+        if escolha == 1:
+            acertos += 1
+            Jmodelagem['Pontos: '] += 20
+            print(mensagem_acerto())
+        elif escolha not in range(1, 5):
+            print('\033[31mNúmero de resposta não existe, portanto será contado como erro!!! :(\033[m')
+        else:
+            print(mensagem_erro())
+    except ValueError:
+        print('Isso não é um número!!!')
 
     if Jmodelagem['Pontos: '] >= 1:
         print('Parabéns {}!!! Você acertou {}/5 pergunta(s) e marcou {} pontos!{}'.format(Jmodelagem['Nome: '], acertos,
