@@ -1,0 +1,47 @@
+
+import javax.swing.JOptionPane;
+
+
+public class Vetores {
+
+    public static void main(String[] args) {
+        
+        String nome[];
+        nome = new String[20];
+        
+        int contador;
+        for(contador=0; contador<=19; contador++){
+            nome[contador] = JOptionPane.showInputDialog("Digite o nome " + contador);
+        }
+        JOptionPane.showMessageDialog(null, nome);
+        
+        int inc;
+        for(inc=0; inc==19; inc+=1){
+            JOptionPane.showMessageDialog(null, nome[inc]);
+        }
+        
+//        JOptionPane.showMessageDialog(null, nome[0] + "\n" +e
+        
+        /*
+        int contador;
+        for(contador=0; contador==9;contador+=1){
+            JOptionPane.showMessageDialog(null, "Victor Cruz");
+        }
+        */
+        
+        /*
+        int contador;
+        contador=10; //início
+        while(contador>=0){ //fim
+            JOptionPane.showMessageDialog(null,contador);
+            if(contador==1){
+                JOptionPane.showMessageDialog(null, "O próximo número é o ultimo");
+            }
+            contador-=1; //incremento
+//          contador++  --- incremento  
+        }
+        */
+        
+    }
+    
+}
