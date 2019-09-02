@@ -1,0 +1,45 @@
+package notas;
+
+import javax.swing.JOptionPane;
+
+public class Notas {
+    public static void main(String[] args) {
+        double notas[], media;
+        notas = obterNotas();
+        media = checarNotas(notas);
+        exibirMedia(media); 
+    }
+
+    private static double[] obterNotas() {
+        int cont;
+        double n[];
+        n = new double[3];
+        for (cont = 0; cont <= 2; cont++) {
+            n[cont] = Double.parseDouble(JOptionPane.showInputDialog("Av" + (cont + 1)));
+        }
+        return n;
+    }
+
+    private static double checarNotas(double[] notas) {
+        double m;
+        if (notas[0] < notas[1] && notas[0] < notas[2]) {
+            m = (notas[1] + notas[2]) / 2;
+        } else if (notas[1] < notas[2] && notas[1] < notas[0]) {
+            m = (notas[0] + notas[2]) / 2;
+        } else {
+            m = (notas[0] + notas[1]) / 2;
+        }
+
+        return m;
+    }
+
+    private static void exibirMedia(double media) {
+        JOptionPane.showMessageDialog(null, "Sua média foi " + media);
+        if (media < 6){
+            JOptionPane.showMessageDialog(null, "Reprovado!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Aprovado!");
+        }
+        
+    }
+}
