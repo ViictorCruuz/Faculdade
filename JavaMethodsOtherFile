@@ -1,0 +1,36 @@
+CLASSE PRINCIPAL
+
+import javax.swing.JOptionPane;
+
+
+public class Notas {
+
+    public static void main(String[] args) {
+        double notas[];
+        notas = Operacoes.pedirNotas();
+        Operacoes.exibirNotas(notas);
+    }   
+}
+================================================================================
+OUTRO ARQUIVO E OUTRA CLASSE
+
+
+import javax.swing.JOptionPane;
+
+
+public class Operacoes {
+    public static double[] pedirNotas(){
+        double notas[];
+        notas = new double[3];
+        for(int cont=0; cont<=2; cont++){
+            notas[cont] = Double.parseDouble(JOptionPane.showInputDialog("Av" + (cont + 1)));
+        }
+        return notas;
+    }
+    
+    public static void exibirNotas(double[] notas){
+        JOptionPane.showMessageDialog(null, "Av1 = " + notas[0] +
+                                     "\n" + "Av2 = " + notas[1] + 
+                                     "\n" + "Av3 = " + notas[2]);
+    }
+}
